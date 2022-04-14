@@ -70,12 +70,13 @@
         width: 28px;
         height: 3px;
     
-        background-color: #fff;
+        background-color: #222222;
     
         font-size: 0;
         color: transparent;
     
         position: relative;
+        z-index: 10;
     }
     
     &__item:before,
@@ -83,11 +84,11 @@
         content: "";
         height: 100%;
     
-        background-color: #fff;
+        background-color: #222222;
     
         position: absolute;
         right: 0;
-        z-index: 1;
+        z-index: 10;
     }
     
     &__item:before {
@@ -108,6 +109,34 @@
     
     .burger {
         display: block;
+    }
+
+    .navShow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background: #fff;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 100px 15px;
+      }
+
+      .nav__link {
+        margin-left: 0px;
+        padding: 10px 0;
+        font-size: 18px;
+        font-weight: 700;
+        color: #222222;
+        text-decoration: none;
+        opacity: .75;
+    
+        transition: opacity .1s linear;
     }
 }
 
