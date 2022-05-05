@@ -1,0 +1,35 @@
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 402px;
+    height: 60px;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #4CAF50;
+}
+
+ul {
+    overflow: auto;
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgb(211, 211, 211);
+    margin-bottom: 20px;
+}
+
+ul li:not(:last-of-type) {
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+li {
+    font-size: 24px;
+    list-style-type: none;
+    padding: 20px;
+}

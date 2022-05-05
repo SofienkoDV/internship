@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { Link } from "react-router-dom";
 import cn from 'classnames';
 import cnBind from "classnames/bind";
 import styles from './Header.module.scss';
@@ -25,7 +26,7 @@ function Header() {
               </div>
   
               <nav className={burgerMenu}>
-                  <a className={styles.nav__link} href="https://wowjs.uk/">Home</a>
+                  <Link className={styles.nav__link} to="Home">Home</Link>
                   <a className={styles.nav__link} href="https://wowjs.uk/">About</a>
                   <a className={styles.nav__link} href="https://wowjs.uk/">Gallary</a>
                   <a className={styles.nav__link} href="https://wowjs.uk/">Features</a>
