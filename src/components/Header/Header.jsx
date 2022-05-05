@@ -12,7 +12,7 @@ function Header() {
 
     const onClickBurger = useCallback(() => {
         setBurger((burger) => !burger);
-      }, [burger]);
+      }, []);
 
 
     return (
