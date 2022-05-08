@@ -1,9 +1,9 @@
-.center {
+.centerHome {
     display: flex;
     justify-content: center;
 }
 
-button {
+.buttonAdd {
     width: 402px;
     height: 60px;
     color: white;
@@ -13,7 +13,7 @@ button {
     background-color: #4CAF50;
 }
 
-ul {
+.listUl {
     overflow: auto;
     width: 100%;
     max-width: 400px;
@@ -24,11 +24,11 @@ ul {
     margin-bottom: 20px;
 }
 
-ul li:not(:last-of-type) {
+.listUl .listLi:not(:last-of-type) {
     border-bottom: 1px solid rgb(211, 211, 211);
 }
 
-li {
+.listLi {
     font-size: 24px;
     list-style-type: none;
     padding: 20px;

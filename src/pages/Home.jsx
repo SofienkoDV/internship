@@ -22,15 +22,15 @@ class Home extends Component {
     render() {
         return (
         <div className="mt-50">
-            <div className={styles.center}>
-                <ul>
-                    {this.state.names.map((num, index) => (
-                    <li key={index}>{num}</li>
+            <div className={styles.centerHome}>
+                <ul className={styles.listUl}>
+                    {this.state.names.map((name, index) => (
+                    <li className={styles.listLi} key={index}>{name}</li>
                     ))}
                 </ul>
             </div>
-            <div className={styles.center}>
-                <button onClick={this.addRandomName}>Добавить имя</button>
+            <div className={styles.centerHome}>
+                <button className={styles.buttonAdd} onClick={this.addRandomName}>Добавить имя</button>
             </div>
         </div>
         );
