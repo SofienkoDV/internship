@@ -19,8 +19,14 @@ class Home extends Component {
         });
     };
 
-    componentDidMount = () => {
+    componentDidMount() {
         console.log("Компонент загружен");
+    }
+
+    componentDidUpdate(prevState) {
+        if (prevState.names !== this.state.names) {
+            console.log("Компонент обновился");
+        }
     }
 
     render() {
