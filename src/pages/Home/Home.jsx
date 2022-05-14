@@ -19,6 +19,10 @@ class Home extends Component {
         });
     };
 
+    componentDidMount = () => {
+        console.log("Компонент загружен");
+    }
+
     render() {
         return (
         <div className="mt-50">
