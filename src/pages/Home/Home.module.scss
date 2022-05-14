@@ -1,11 +1,7 @@
-.centerHome {
-    display: flex;
-    justify-content: center;
-}
-
-.buttonAdd {
+.buttonHome {
     width: 402px;
     height: 60px;
+    margin-top: 1%;
     color: white;
     padding: 14px 20px;
     border: none;
@@ -13,23 +9,7 @@
     background-color: #4CAF50;
 }
 
-.listUl {
-    overflow: auto;
-    width: 100%;
-    max-width: 400px;
-    height: 200px;
-    padding: 0;
-    margin: 0;
-    border: 1px solid rgb(211, 211, 211);
-    margin-bottom: 20px;
-}
-
-.listUl .listLi:not(:last-of-type) {
-    border-bottom: 1px solid rgb(211, 211, 211);
-}
-
-.listLi {
-    font-size: 24px;
-    list-style-type: none;
-    padding: 20px;
+.centerHome {
+    display: flex;
+    justify-content: center;
 }
