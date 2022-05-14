@@ -23,11 +23,11 @@ function Header() {
               </div>
   
               <nav className={burgerMenu}>
-                  <Link className={styles.nav__link} to="Home">Home</Link>
+                  <Link className={styles.nav__link} to="home">Home</Link>
                   <a className={styles.nav__link} href="https://wowjs.uk/">About</a>
                   <a className={styles.nav__link} href="https://wowjs.uk/">Gallary</a>
                   <a className={styles.nav__link} href="https://wowjs.uk/">Features</a>
-                  <a className={styles.nav__link} href="https://wowjs.uk/">Contact</a>
+                  <Link className={styles.nav__link} to="biography">Biography</Link>
               </nav>
   
               <button className={styles.burger} onClick={onClickBurger}>

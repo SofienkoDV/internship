@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Intro from '../Intro/Intro';
 import Team from '../Team/Team';
 import Works from '../Works/Works';
+
 import styles from './Wrapper.module.scss';
 import 'macro-css';
 
