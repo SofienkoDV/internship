@@ -29,6 +29,7 @@ return (
                 name={item.name}
                 imageUrl={item.imageUrl}
                 cash={item.cash}
+                cryptocurrency={item.cryptocurrency.map(({amount}) => amount)}
               />
             ))}
         </div>
