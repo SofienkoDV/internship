@@ -19,6 +19,12 @@ class Home extends Component {
         });
     };
 
+    RemoveRandomName = () => {
+        this.setState({
+            names: this.state.names.filter((name, index) => index !== Math.floor(Math.random() * this.state.names.length)),
+        });
+    }
+
     componentDidMount() {
         console.log("Компонент загружен");
     }
@@ -45,6 +51,9 @@ class Home extends Component {
             </div>
             <div className={styles.centerHome}>
                 <button className={styles.buttonHome} onClick={this.addRandomName}>Додати ім'я</button>
+            </div>
+            <div className={styles.centerHome}>
+                <button className={styles.buttonHome} onClick={this.RemoveRandomName}>Видалити ім'я</button>
             </div>
         </>
         );
