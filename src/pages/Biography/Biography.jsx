@@ -29,7 +29,6 @@ return (
                 name={item.name}
                 imageUrl={item.imageUrl}
                 cash={item.cash}
-                // Не розумію як мені дістати криптовалюти вони на другому рівні знаходяться в обєкті item.cryptocurrency
               />
             ))}
         </div>
