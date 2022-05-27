@@ -3,7 +3,7 @@ import styles from './HomeItem.module.scss'
 
 class Home extends Component {
 	state = {
-		names: ['Denis', 'Maks', 'Jane'],
+		names: ['Denis', 'Make', 'Jane'],
 	}
 
 	getRandomName = () => {
