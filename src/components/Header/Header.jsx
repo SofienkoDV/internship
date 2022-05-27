@@ -29,7 +29,7 @@ function Header() {
 							About
 						</a>
 						<a className={styles.nav__link} href='https://wowjs.uk/'>
-							Gallary
+							Gallery
 						</a>
 						<a className={styles.nav__link} href='https://wowjs.uk/'>
 							Features
