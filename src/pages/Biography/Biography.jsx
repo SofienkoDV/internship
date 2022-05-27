@@ -27,6 +27,7 @@ function Biography() {
 					<BiographyItem
 						key={item.id}
 						name={item.name}
+						imageUrl={item.imageUrl}
 						cash={item.cash}
 						cryptocurrency={item.cryptocurrency.map(({ amount }) => amount)}
 					/>
