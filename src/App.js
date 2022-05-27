@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 import AppContext from './context'
-import Wrapper from './components/Wrapper/Wrapper'
+import Wrapper from './pages/Wrapper/Wrapper'
 import Home from './pages/Home/Home'
 import Biography from './pages/Biography/Biography'
 
