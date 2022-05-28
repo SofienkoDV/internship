@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import HomeView from './HomeView'
 import HomeItem from '../../components/HomeItem/HomeItem'
 import styles from './Home.module.scss'
 
@@ -10,14 +11,12 @@ function Home() {
 	}
 
 	return (
-		<div className='mt-50'>
-			{visible && <HomeItem />}
-			<div className={styles.centerHome}>
-				<button className={styles.buttonHome} onClick={toggleVisibility}>
-					Показати / Сховати
-				</button>
-			</div>
-		</div>
+		<HomeView
+			visible={visible}
+			toggleVisibility={toggleVisibility}
+			HomeItem={HomeItem}
+			styles={styles}
+		/>
 	)
 }
 
