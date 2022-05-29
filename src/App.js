@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Component } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 import AppContext from './context'
@@ -6,40 +6,67 @@ import Wrapper from './pages/Wrapper/Wrapper'
 import Home from './pages/Home/Home'
 import Biography from './pages/Biography/Biography'
 
-function App() {
-	const [items, setItems] = useState([])
-	const [features, setFeatures] = useState([])
+// function App() {
+// 	const [items, setItems] = useState([])
+// 	const [features, setFeatures] = useState([])
 
-	useEffect(() => {
-		async function fetchData() {
-			try {
-				const [itemsResponse, featuresResponse] = await Promise.all([
-					axios.get('https://618115078bfae60017adfe03.mockapi.io/items'),
-					axios.get('https://618115078bfae60017adfe03.mockapi.io/arrFeatures'),
-				])
+// 	useEffect(() => {
+// 		async function fetchData() {
+// 			try {
+// 				const [itemsResponse, featuresResponse] = await Promise.all([
+// 					axios.get('https://618115078bfae60017adfe03.mockapi.io/items'),
+// 					axios.get('https://618115078bfae60017adfe03.mockapi.io/arrFeatures'),
+// 				])
 
-				setFeatures(featuresResponse.data)
-				setItems(itemsResponse.data)
-			} catch (error) {
-				alert('Помилка при запиті даних :(')
-				console.log(error)
-			}
+// 				setFeatures(featuresResponse.data)
+// 				setItems(itemsResponse.data)
+// 			} catch (error) {
+// 				alert('Помилка при запиті даних :(')
+// 				console.log(error)
+// 			}
+// 		}
+
+// 		fetchData()
+// 	}, [])
+
+class App extends Component {
+	state = {
+		items: [],
+		features: [],
+	}
+
+	async componentDidMount() {
+		try {
+			const [itemsResponse, featuresResponse] = await Promise.all([
+				axios.get('https://618115078bfae60017adfe03.mockapi.io/items'),
+				axios.get('https://618115078bfae60017adfe03.mockapi.io/arrFeatures'),
+			])
+
+			this.setState({
+				features: featuresResponse.data,
+				items: itemsResponse.data,
+			})
+		} catch (error) {
+			alert('Помилка при запиті даних :(')
+			console.log(error)
 		}
+	}
 
-		fetchData()
-	}, [])
+	render() {
+		const { items, features } = this.state
 
-	return (
-		<AppContext.Provider value={{ items, features }}>
-			<BrowserRouter>
-				<Routes>
-					<Route path='/' element={<Wrapper />} />
-					<Route path='home' element={<Home />} />
-					<Route path='biography' element={<Biography />} />
-				</Routes>
-			</BrowserRouter>
-		</AppContext.Provider>
-	)
+		return (
+			<AppContext.Provider value={{ items, features }}>
+				<BrowserRouter>
+					<Routes>
+						<Route path='/' element={<Wrapper />} />
+						<Route path='home' element={<Home />} />
+						<Route path='biography' element={<Biography />} />
+					</Routes>
+				</BrowserRouter>
+			</AppContext.Provider>
+		)
+	}
 }
 
 export default App
