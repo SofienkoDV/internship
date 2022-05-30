@@ -14,18 +14,15 @@ class Home extends Component {
 	}
 
 	addRandomName = () => {
-		this.setState({
-			names: [...this.state.names, this.getRandomName()],
-		})
+		this.setState(prevState => ({
+			names: [...prevState.names, this.getRandomName()],
+		}))
 	}
 
 	RemoveRandomName = () => {
-		this.setState({
-			names: this.state.names.filter(
-				(name, index) =>
-					index !== Math.floor(Math.random() * this.state.names.length)
-			),
-		})
+		this.setState(prevState => ({
+			names: prevState.names.filter(name => name !== this.getRandomName()),
+		}))
 	}
 
 	render() {
