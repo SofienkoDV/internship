@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styles from './FeaturesItem.module.scss'
 
 function FeaturesItem(props) {
@@ -15,6 +16,12 @@ function FeaturesItem(props) {
 			</div>
 		</div>
 	)
+}
+
+FeaturesItem.propTypes = {
+	imgUrl: PropTypes.string,
+	alt: PropTypes.string,
+	title: PropTypes.string,
 }
 
 export default FeaturesItem

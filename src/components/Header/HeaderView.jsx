@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 function HeaderView({ burgerMenu, onClickBurger, styles, logo, Link }) {
 	return (
 		<header className={styles.header}>
@@ -33,6 +34,14 @@ function HeaderView({ burgerMenu, onClickBurger, styles, logo, Link }) {
 			</div>
 		</header>
 	)
+}
+
+HeaderView.propTypes = {
+	burgerMenu: PropTypes.string,
+	onClickBurger: PropTypes.func,
+	styles: PropTypes.object,
+	logo: PropTypes.string,
+	Link: PropTypes.func,
 }
 
 export default HeaderView

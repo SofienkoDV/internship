@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 function Intro({
 	myRef,
 	_onMouseMove,
@@ -32,6 +33,15 @@ function Intro({
 			</div>
 		</div>
 	)
+}
+
+Intro.propTypes = {
+	myRef: PropTypes.object,
+	_onMouseMove: PropTypes.func,
+	maskStyle: PropTypes.object,
+	styles: PropTypes.object,
+	textTitle: PropTypes.string,
+	textSubtitle: PropTypes.string,
 }
 
 export default Intro

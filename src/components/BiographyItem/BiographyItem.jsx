@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styles from './BiographyItem.module.scss'
 
 function BiographyItem(props) {
@@ -17,6 +18,13 @@ function BiographyItem(props) {
 			</div>
 		</div>
 	)
+}
+
+BiographyItem.propTypes = {
+	imageUrl: PropTypes.string,
+	name: PropTypes.string,
+	cash: PropTypes.number,
+	cryptocurrency: PropTypes.number,
 }
 
 export default BiographyItem

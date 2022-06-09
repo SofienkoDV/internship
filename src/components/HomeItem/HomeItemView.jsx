@@ -1,5 +1,5 @@
 import { Component } from 'react'
-
+import PropTypes from 'prop-types'
 class HomeItemView extends Component {
 	render() {
 		const { names, addRandomName, RemoveRandomName, styles } = this.props
@@ -27,6 +27,13 @@ class HomeItemView extends Component {
 			</>
 		)
 	}
+}
+
+HomeItemView.propTypes = {
+	names: PropTypes.array,
+	addRandomName: PropTypes.func,
+	RemoveRandomName: PropTypes.func,
+	styles: PropTypes.object,
 }
 
 export default HomeItemView
