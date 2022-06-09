@@ -6,29 +6,6 @@ import Wrapper from './pages/Wrapper/Wrapper'
 import Home from './pages/Home/Home'
 import Biography from './pages/Biography/Biography'
 
-// function App() {
-// 	const [items, setItems] = useState([])
-// 	const [features, setFeatures] = useState([])
-
-// 	useEffect(() => {
-// 		async function fetchData() {
-// 			try {
-// 				const [itemsResponse, featuresResponse] = await Promise.all([
-// 					axios.get('https://618115078bfae60017adfe03.mockapi.io/items'),
-// 					axios.get('https://618115078bfae60017adfe03.mockapi.io/arrFeatures'),
-// 				])
-
-// 				setFeatures(featuresResponse.data)
-// 				setItems(itemsResponse.data)
-// 			} catch (error) {
-// 				alert('Помилка при запиті даних :(')
-// 				console.log(error)
-// 			}
-// 		}
-
-// 		fetchData()
-// 	}, [])
-
 class App extends Component {
 	state = {
 		items: [],
