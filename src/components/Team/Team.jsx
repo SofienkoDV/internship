@@ -1,9 +1,5 @@
 import styles from './Team.module.scss'
-
-import TeamOne from '../../assets/team/1.jpg'
-import TeamTwo from '../../assets/team/2.jpg'
-import TeamThree from '../../assets/team/3.jpg'
-import TeamFour from '../../assets/team/4.jpg'
+import { TeamOne, TeamTwo, TeamThree, TeamFour } from '../'
 
 function Team() {
 	return (

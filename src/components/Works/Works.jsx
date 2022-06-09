@@ -1,13 +1,14 @@
+import {
+	worksOne,
+	worksTwo,
+	worksThree,
+	worksFour,
+	worksFive,
+	worksSix,
+	worksSeven,
+	worksEight,
+} from '../'
 import styles from './Works.module.scss'
-
-import worksOne from '../../assets/works/1.webp'
-import worksTwo from '../../assets/works/2.webp'
-import worksThree from '../../assets/works/3.webp'
-import worksFour from '../../assets/works/4.webp'
-import worksFive from '../../assets/works/5.webp'
-import worksSix from '../../assets/works/6.webp'
-import worksSeven from '../../assets/works/7.webp'
-import worksEight from '../../assets/works/8.webp'
 
 function Works() {
 	return (
