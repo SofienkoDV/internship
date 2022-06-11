@@ -1,7 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 import PropTypes from 'prop-types';
 
-function Intro({
+function IntroView({
   myRef,
   _onMouseMove,
   maskStyle,
@@ -37,7 +37,7 @@ function Intro({
   );
 }
 
-Intro.propTypes = {
+IntroView.propTypes = {
   myRef: PropTypes.object,
   _onMouseMove: PropTypes.func,
   maskStyle: PropTypes.object,
@@ -46,7 +46,7 @@ Intro.propTypes = {
   textSubtitle: PropTypes.string,
 };
 
-Intro.defaultProps = {
+IntroView.defaultProps = {
   myRef: null,
   _onMouseMove: null,
   maskStyle: null,
@@ -55,4 +55,4 @@ Intro.defaultProps = {
   textSubtitle: '',
 };
 
-export default Intro;
+export default IntroView;
