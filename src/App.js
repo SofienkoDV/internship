@@ -37,6 +37,7 @@ class App extends Component {
     const { items, features } = this.state;
 
     return (
+      // Як замінити хук useMemo в классовому компоненті?
       // eslint-disable-next-line react/jsx-no-constructed-context-values
       <AppContext.Provider value={{ items, features }}>
         <BrowserRouter>
