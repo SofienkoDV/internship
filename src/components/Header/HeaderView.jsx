@@ -41,7 +41,7 @@ HeaderView.propTypes = {
 	onClickBurger: PropTypes.func,
 	styles: PropTypes.object,
 	logo: PropTypes.string,
-	Link: PropTypes.func,
+	Link: PropTypes.object,
 }
 
 export default HeaderView
