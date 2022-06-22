@@ -29,7 +29,8 @@ BiographyItem.propTypes = {
   imageUrl: PropTypes.string,
   name: PropTypes.string,
   cash: PropTypes.number,
-  cryptocurrency: PropTypes.number,
+  // eslint-disable-next-line react/forbid-prop-types
+  cryptocurrency: PropTypes.array,
 };
 
 BiographyItem.defaultProps = {

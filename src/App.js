@@ -1,55 +1,46 @@
 import axios from 'axios';
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppContext from './context';
 import { Home, Biography, Wrapper } from './pages';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+function App() {
+  const [items, setItems] = useState([]);
+  const [features, setFeatures] = useState([]);
 
-    this.state = {
-      items: [],
-      features: [],
-    };
-  }
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const [itemsResponse, featuresResponse] = await Promise.all([
+          axios.get('https://618115078bfae60017adfe03.mockapi.io/items'),
+          axios.get('https://618115078bfae60017adfe03.mockapi.io/arrFeatures'),
+        ]);
 
-  async componentDidMount() {
-    try {
-      const [itemsResponse, featuresResponse] = await Promise.all([
-        axios.get('https://618115078bfae60017adfe03.mockapi.io/items'),
-        axios.get('https://618115078bfae60017adfe03.mockapi.io/arrFeatures'),
-      ]);
-
-      this.setState({
-        features: featuresResponse.data,
-        items: itemsResponse.data,
-      });
-    } catch (error) {
-      // eslint-disable-next-line no-alert
-      alert('Помилка при запиті даних :(');
-      // eslint-disable-next-line no-console
-      console.log(error);
+        setFeatures(featuresResponse.data);
+        setItems(itemsResponse.data);
+      } catch (error) {
+        // eslint-disable-next-line no-alert
+        alert('Помилка при запиті даних :(');
+        // eslint-disable-next-line no-console
+        console.log(error);
+      }
     }
-  }
 
-  render() {
-    const { items, features } = this.state;
+    fetchData();
+  }, []);
 
-    return (
-      // Як замінити хук useMemo в классовому компоненті?
-      // eslint-disable-next-line react/jsx-no-constructed-context-values
-      <AppContext.Provider value={{ items, features }}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Wrapper />} />
-            <Route path="home" element={<Home />} />
-            <Route path="biography" element={<Biography />} />
-          </Routes>
-        </BrowserRouter>
-      </AppContext.Provider>
-    );
-  }
+  return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
+    <AppContext.Provider value={{ items, features }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Wrapper />} />
+          <Route path="home" element={<Home />} />
+          <Route path="biography" element={<Biography />} />
+        </Routes>
+      </BrowserRouter>
+    </AppContext.Provider>
+  );
 }
 
 export default App;
