@@ -2,11 +2,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-.appCard {
+.appCardCenter {
   width: 100vw;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,6 +17,20 @@
   height: 300px;
   border-radius: 12px;
   border: 5px solid goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: grab;
+}
+
+.hotkeyCard {
+  width: 200px;
+  height: 300px;
+  border-radius: 12px;
+  border: 5px solid rgb(115, 61, 201);
   display: flex;
   justify-content: center;
   align-items: center;
