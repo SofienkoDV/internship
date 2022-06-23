@@ -8,9 +8,7 @@ function Header() {
   const [burger, setBurger] = useState(false);
 
   const onClickBurger = useCallback(() => {
-    // Чи можливо зробити якось інакше щоб не сварився eslint?
-    // eslint-disable-next-line no-shadow
-    setBurger((burger) => !burger);
+    setBurger((prevBurger) => !prevBurger);
   }, []);
 
   return (

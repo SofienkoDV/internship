@@ -32,6 +32,7 @@ function Card() {
   const isCardTwo = useKeyPress('2');
   const isCardThree = useKeyPress('3');
   const isCardFour = useKeyPress('4');
+
   const [cardList, setCardList] = useState([
     {
       id: 1,
