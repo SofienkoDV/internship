@@ -1,9 +1,7 @@
-/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import styles from './Card.module.scss';
 
 function Card() {
-  // eslint-disable-next-line no-unused-vars
   const [cardList, setCardList] = useState([
     {
       id: 1,
@@ -32,7 +30,7 @@ function Card() {
   function dragStartHandler(e, card) {
     setCurrentCard(card);
   }
-  function dragEndHandler(e, card) {
+  function dragEndHandler(e) {
     e.target.style.background = '#fff';
   }
 
@@ -66,7 +64,6 @@ function Card() {
   return (
     <div className={styles.appCard}>
       {cardList.sort(sortCards).map((card) => (
-        // eslint-disable-next-line react/jsx-curly-brace-presence
         <div
           onDragStart={(e) => dragStartHandler(e, card)}
           onDragLeave={(e) => dragEndHandler(e)}
@@ -75,7 +72,6 @@ function Card() {
           onDrop={(e) => dropHandler(e, card)}
           draggable
           key={card.id}
-          // eslint-disable-next-line react/jsx-curly-brace-presence
           className={styles.card}
         >
           {card.text}
