@@ -2,7 +2,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppContext from './context';
-import { Home, Biography, Wrapper } from './pages';
+// eslint-disable-next-line object-curly-newline
+import { Home, Biography, Wrapper, Card } from './pages';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/" element={<Wrapper />} />
           <Route path="home" element={<Home />} />
           <Route path="biography" element={<Biography />} />
+          <Route path="card" element={<Card />} />
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>

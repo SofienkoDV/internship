@@ -19,9 +19,9 @@ function HeaderView({ burger, onClickBurger, styles, logo, Link }) {
             <Link className={styles.nav__link} to="home">
               Home
             </Link>
-            <a className={styles.nav__link} href="https://wowjs.uk/">
-              About
-            </a>
+            <Link className={styles.nav__link} to="card">
+              Card
+            </Link>
             <a className={styles.nav__link} href="https://wowjs.uk/">
               Gallery
             </a>
