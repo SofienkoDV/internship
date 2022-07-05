@@ -9,15 +9,6 @@ export { default as BiographyItem } from './BiographyItem/BiographyItem';
 export { default as FeaturesItem } from './FeaturesItem/FeaturesItem';
 export { default as HomeItem } from './HomeItem/HomeItem';
 
-export { default as worksOne } from '../assets/works/1.webp';
-export { default as worksTwo } from '../assets/works/2.webp';
-export { default as worksThree } from '../assets/works/3.webp';
-export { default as worksFour } from '../assets/works/4.webp';
-export { default as worksFive } from '../assets/works/5.webp';
-export { default as worksSix } from '../assets/works/6.webp';
-export { default as worksSeven } from '../assets/works/7.webp';
-export { default as worksEight } from '../assets/works/8.webp';
-
 export { default as TeamOne } from '../assets/team/1.jpg';
 export { default as TeamTwo } from '../assets/team/2.jpg';
 export { default as TeamThree } from '../assets/team/3.jpg';

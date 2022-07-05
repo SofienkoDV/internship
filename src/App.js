@@ -8,17 +8,20 @@ import { Home, Biography, Wrapper, Card } from './pages';
 function App() {
   const [items, setItems] = useState([]);
   const [features, setFeatures] = useState([]);
+  const [works, setWorks] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const [itemsResponse, featuresResponse] = await Promise.all([
+        const [itemsResponse, featuresResponse, worksResponse] = await Promise.all([
           axios.get('https://618115078bfae60017adfe03.mockapi.io/items'),
           axios.get('https://618115078bfae60017adfe03.mockapi.io/arrFeatures'),
+          axios.get('https://618115078bfae60017adfe03.mockapi.io/works'),
         ]);
 
         setFeatures(featuresResponse.data);
         setItems(itemsResponse.data);
+        setWorks(worksResponse.data);
       } catch (error) {
         // eslint-disable-next-line no-alert
         alert('Помилка при запиті даних :(');
@@ -32,7 +35,7 @@ function App() {
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <AppContext.Provider value={{ items, features }}>
+    <AppContext.Provider value={{ items, features, works }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Wrapper />} />
