@@ -1,9 +1,11 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable object-curly-newline */
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import styles from './Header.module.scss';
 
-function HeaderView({ burger, onClickBurger, styles, logo, Link }) {
+function HeaderView({
+  burger, onClickBurger, logo 
+}) {
   const burgerMenu = cn(burger ? styles.navShow : styles.nav);
 
   return (
@@ -49,16 +51,12 @@ function HeaderView({ burger, onClickBurger, styles, logo, Link }) {
 HeaderView.propTypes = {
   burger: PropTypes.bool.isRequired,
   onClickBurger: PropTypes.func,
-  styles: PropTypes.object,
   logo: PropTypes.string,
-  Link: PropTypes.object,
 };
 
 HeaderView.defaultProps = {
   onClickBurger: () => {},
-  styles: {},
   logo: '',
-  Link: {},
 };
 
 export default HeaderView;

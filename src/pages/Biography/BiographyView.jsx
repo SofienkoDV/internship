@@ -1,7 +1,7 @@
-/* eslint-disable object-curly-newline */
 import PropTypes from 'prop-types';
+import styles from './Biography.module.scss';
 
-function BiographyView({ filterName, setValue, BiographyItem, styles }) {
+function BiographyView({ filterName, setValue, BiographyItem }) {
   return (
     <div className={styles.container}>
       <div className={styles.BiographyForm}>
@@ -44,15 +44,12 @@ BiographyView.propTypes = {
   ),
   setValue: PropTypes.func,
   BiographyItem: PropTypes.func,
-  // eslint-disable-next-line react/forbid-prop-types
-  styles: PropTypes.object,
 };
 
 BiographyView.defaultProps = {
   filterName: [],
   setValue: () => {},
   BiographyItem: () => {},
-  styles: {},
 };
 
 export default BiographyView;

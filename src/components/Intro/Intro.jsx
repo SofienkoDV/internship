@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import styles from './Intro.module.scss';
 import IntroView from './IntroView';
 
 function Intro() {
@@ -24,10 +23,9 @@ function Intro() {
 
   return (
     <IntroView
-      myRef={myRef}
+      _myRef={myRef}
       _onMouseMove={onMouseMoveItem}
       maskStyle={maskStyle}
-      styles={styles}
       textTitle="Excepteur sint occaecat cupidatat non proident"
       textSubtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."

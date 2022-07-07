@@ -1,9 +1,9 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import PropTypes from 'prop-types';
 import styles from './BiographyItem.module.scss';
 
-// eslint-disable-next-line object-curly-newline
-function BiographyItem({ imageUrl, name, cash, cryptocurrency }) {
+function BiographyItem({
+  imageUrl, name, cash, cryptocurrency 
+}) {
   return (
     <div className={styles.Biography__item}>
       <img
@@ -12,9 +12,16 @@ function BiographyItem({ imageUrl, name, cash, cryptocurrency }) {
         alt="BiographyOne"
       />
       <h4 className={styles.Biography__title}>{name}</h4>
-      <p className={styles.Biography__cash}>Cash: {cash} $</p>
+      <p className={styles.Biography__cash}>
+        Cash: 
+        {' '}
+        {cash}
+        {' '}
+        $
+      </p>
       <p>
         Bitcoin:
+        {' '}
         {cryptocurrency}
       </p>
       <div className={styles.Biography__text}>
@@ -29,15 +36,14 @@ BiographyItem.propTypes = {
   imageUrl: PropTypes.string,
   name: PropTypes.string,
   cash: PropTypes.number,
-  // eslint-disable-next-line react/forbid-prop-types
-  cryptocurrency: PropTypes.array,
+  cryptocurrency: PropTypes.arrayOf(PropTypes.string),
 };
 
 BiographyItem.defaultProps = {
   imageUrl: '',
   name: '',
   cash: 0,
-  cryptocurrency: 0,
+  cryptocurrency: [],
 };
 
 export default BiographyItem;

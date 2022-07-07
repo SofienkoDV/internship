@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import HomeItemView from './HomeItemView';
-import styles from './HomeItem.module.scss';
 
 class Home extends Component {
   constructor(props) {
@@ -37,7 +36,6 @@ class Home extends Component {
         names={names}
         addRandomName={this.addRandomName}
         RemoveRandomName={this.RemoveRandomName}
-        styles={styles}
       />
     );
   }

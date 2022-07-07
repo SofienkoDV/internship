@@ -2,8 +2,9 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppContext from './context';
-// eslint-disable-next-line object-curly-newline
-import { Home, Biography, Wrapper, Card } from './pages';
+import {
+  Home, Biography, Wrapper, Card 
+} from './pages';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -25,6 +26,7 @@ function App() {
       } catch (error) {
         // eslint-disable-next-line no-alert
         alert('Помилка при запиті даних :(');
+        
         // eslint-disable-next-line no-console
         console.log(error);
       }

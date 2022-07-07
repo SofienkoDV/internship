@@ -1,6 +1,6 @@
-/* eslint-disable import/no-cycle */
 export { default as Footer } from './Footer/Footer';
 export { default as Features } from './Features/Features';
+// eslint-disable-next-line import/no-cycle
 export { default as Team } from './Team/Team';
 export { default as Header } from './Header/Header';
 export { default as Intro } from './Intro/Intro';

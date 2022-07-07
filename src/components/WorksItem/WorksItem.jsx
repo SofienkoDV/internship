@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import PropTypes from 'prop-types';
 import styles from './WorksItem.module.scss';
 
@@ -21,6 +20,13 @@ WorksItem.propTypes = {
   text: PropTypes.string,
   imgUrl: PropTypes.string,
   alt: PropTypes.string,
+};
+
+WorksItem.defaultProps = {
+  title: '',
+  text: '',
+  imgUrl: '',
+  alt: '',
 };
 
 export default WorksItem;

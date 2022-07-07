@@ -1,11 +1,10 @@
-/* eslint-disable react/forbid-prop-types */
 import PropTypes from 'prop-types';
+import styles from './Intro.module.scss';
 
 function IntroView({
-  myRef,
+  _myRef,
   _onMouseMove,
   maskStyle,
-  styles,
   textTitle,
   textSubtitle,
 }) {
@@ -15,7 +14,7 @@ function IntroView({
         <div className={styles.intro__inner}>
           <div
             className={styles.intro__container}
-            ref={myRef}
+            ref={_myRef}
             onMouseMove={_onMouseMove}
             style={maskStyle}
           >
@@ -38,19 +37,23 @@ function IntroView({
 }
 
 IntroView.propTypes = {
-  myRef: PropTypes.object,
+  _myRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
   _onMouseMove: PropTypes.func,
-  maskStyle: PropTypes.object,
-  styles: PropTypes.object,
+  maskStyle: PropTypes.shape({
+    '--maskX': PropTypes.number,
+    '--maskY': PropTypes.number,
+  }),
   textTitle: PropTypes.string,
   textSubtitle: PropTypes.string,
 };
 
 IntroView.defaultProps = {
-  myRef: null,
+  _myRef: null,
   _onMouseMove: null,
   maskStyle: null,
-  styles: null,
   textTitle: '',
   textSubtitle: '',
 };

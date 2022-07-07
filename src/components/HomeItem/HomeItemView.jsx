@@ -1,12 +1,10 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable react/no-unescaped-entities */
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './HomeItem.module.scss';
 
 class HomeItemView extends Component {
   render() {
-    // eslint-disable-next-line object-curly-newline
-    const { names, addRandomName, RemoveRandomName, styles } = this.props;
+    const { names, addRandomName, RemoveRandomName } = this.props;
     return (
       <>
         <div className={styles.centerHome}>
@@ -24,7 +22,7 @@ class HomeItemView extends Component {
             className={styles.buttonHome}
             onClick={addRandomName}
           >
-            Додати ім'я
+            Add random name
           </button>
         </div>
         <div className={styles.centerHome}>
@@ -33,7 +31,7 @@ class HomeItemView extends Component {
             className={styles.buttonHome}
             onClick={RemoveRandomName}
           >
-            Видалити ім'я
+            Remove random name
           </button>
         </div>
       </>
@@ -42,17 +40,14 @@ class HomeItemView extends Component {
 }
 
 HomeItemView.propTypes = {
-  names: PropTypes.array,
+  names: PropTypes.arrayOf(PropTypes.string).isRequired,
   addRandomName: PropTypes.func,
   RemoveRandomName: PropTypes.func,
-  styles: PropTypes.object,
 };
 
 HomeItemView.defaultProps = {
-  names: [],
   addRandomName: () => {},
   RemoveRandomName: () => {},
-  styles: {},
 };
 
 export default HomeItemView;

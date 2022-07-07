@@ -2,7 +2,6 @@ import { useContext, useState } from 'react';
 import BiographyItem from '../../components/BiographyItem/BiographyItem';
 import BiographyView from './BiographyView';
 import AppContext from '../../context';
-import styles from './Biography.module.scss';
 
 function Biography() {
   const { items } = useContext(AppContext);
@@ -17,7 +16,6 @@ function Biography() {
       filterName={filterName}
       setValue={setValue}
       BiographyItem={BiographyItem}
-      styles={styles}
     />
   );
 }
