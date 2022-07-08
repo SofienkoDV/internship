@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppContext from './context';
 import {
@@ -35,9 +35,14 @@ function App() {
     fetchData();
   }, []);
 
+  const value = useMemo(() => ({
+    items,
+    features,
+    works,
+  }), [items, features, works]);
+
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <AppContext.Provider value={{ items, features, works }}>
+    <AppContext.Provider value={value}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Wrapper />} />
