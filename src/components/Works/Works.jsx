@@ -8,13 +8,13 @@ function Works() {
 
   return (
     <div className={styles.works}>
-      {works.map((featureItem) => (
+      {works.map((worksItem) => (
         <WorksItem 
-          key={featureItem.id}
-          title={featureItem.title}
-          text={featureItem.text}
-          alt={featureItem.alt}
-          imgUrl={featureItem.imgUrl}
+          key={worksItem.id}
+          title={worksItem.title}
+          text={worksItem.text}
+          alt={worksItem.alt}
+          imgUrl={worksItem.imgUrl}
         />
       ))}
     </div>
