@@ -1,44 +1,29 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import HomeItemView from './HomeItemView';
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
+function HomeItem() {
+  const [names, setNames] = useState(['Denis', 'Make', 'Jane']);
 
-    this.state = {
-      names: ['Denis', 'Make', 'Jane'],
-    };
-  }
-
-  getRandomName = () => {
-    const { names } = this.state;
+  const getRandomName = () => {
     const randomIndex = Math.floor(Math.random() * names.length);
     return names[randomIndex];
   };
 
-  addRandomName = () => {
-    this.setState((prevState) => ({
-      names: [...prevState.names, this.getRandomName()],
-    }));
+  const addRandomName = () => {
+    setNames((PrevNames) => [...PrevNames, getRandomName()]);
   };
 
-  RemoveRandomName = () => {
-    this.setState((prevState) => ({
-      names: prevState.names.filter((name) => name !== this.getRandomName()),
-    }));
+  const RemoveRandomName = () => {
+    setNames((PrevNames) => PrevNames.filter((name) => name !== getRandomName()));
   };
 
-  render() {
-    const { names } = this.state;
-
-    return (
-      <HomeItemView
-        names={names}
-        addRandomName={this.addRandomName}
-        RemoveRandomName={this.RemoveRandomName}
-      />
-    );
-  }
+  return (
+    <HomeItemView
+      names={names}
+      addRandomName={addRandomName}
+      RemoveRandomName={RemoveRandomName}
+    />
+  );
 }
 
-export default Home;
+export default HomeItem;
