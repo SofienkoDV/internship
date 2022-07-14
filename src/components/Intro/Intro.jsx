@@ -26,9 +26,6 @@ function Intro() {
       _myRef={myRef}
       _onMouseMove={onMouseMoveItem}
       maskStyle={maskStyle}
-      textTitle="Excepteur sint occaecat cupidatat non proident"
-      textSubtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     />
   );
 }

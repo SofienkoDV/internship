@@ -1,5 +1,8 @@
 import axios from 'axios';
-import { useState, useEffect, useMemo } from 'react';
+import './i18n';
+import {
+  useState, useEffect, useMemo, Suspense 
+} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppContext from './context';
 import {
@@ -11,7 +14,7 @@ function App() {
   const [features, setFeatures] = useState([]);
   const [works, setWorks] = useState([]);
   const [team, setTeam] = useState([]);
-
+  
   useEffect(() => {
     async function fetchData() {
       try {
@@ -46,16 +49,18 @@ function App() {
   }), [items, features, works, team]);
 
   return (
-    <AppContext.Provider value={value}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Wrapper />} />
-          <Route path="home" element={<Home />} />
-          <Route path="biography" element={<Biography />} />
-          <Route path="card" element={<Card />} />
-        </Routes>
-      </BrowserRouter>
-    </AppContext.Provider>
+    <Suspense fallback={<div>Loading...</div>}>
+      <AppContext.Provider value={value}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Wrapper />} />
+            <Route path="home" element={<Home />} />
+            <Route path="biography" element={<Biography />} />
+            <Route path="card" element={<Card />} />
+          </Routes>
+        </BrowserRouter>
+      </AppContext.Provider>
+    </Suspense>
   );
 }
 

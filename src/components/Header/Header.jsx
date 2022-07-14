@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import logo from '../../assets/logo.png';
 import HeaderView from './HeaderView';
 
@@ -9,11 +10,17 @@ function Header() {
     setBurger((prevBurger) => !prevBurger);
   }, []);
 
+  const { i18n } = useTranslation();
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <HeaderView
       burger={burger}
       onClickBurger={onClickBurger}
       logo={logo}
+      changeLanguage={changeLanguage}
     />
   );
 }

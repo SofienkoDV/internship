@@ -1,13 +1,14 @@
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import styles from './Intro.module.scss';
 
 function IntroView({
   _myRef,
   _onMouseMove,
-  maskStyle,
-  textTitle,
-  textSubtitle,
+  maskStyle
 }) {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.intro}>
       <div className={styles.container}>
@@ -19,12 +20,12 @@ function IntroView({
             style={maskStyle}
           >
             <div className={styles.intro__wrapper}>
-              <h1>{textTitle}</h1>
+              <h1>{t('welcome')}</h1>
             </div>
             <div className={`${styles.intro__wrapper} ${styles.intro__clone}`}>
-              <h1>{textTitle}</h1>
+              <h1>{t('welcome')}</h1>
             </div>
-            <h2 className={styles.intro__subtitle}>{textSubtitle}</h2>
+            <h2 className={styles.intro__subtitle}>{t('subWelcome')}</h2>
           </div>
 
           <a className={styles.btn} href="https://wowjs.uk/">
@@ -46,16 +47,12 @@ IntroView.propTypes = {
     '--maskX': PropTypes.number,
     '--maskY': PropTypes.number,
   }),
-  textTitle: PropTypes.string,
-  textSubtitle: PropTypes.string,
 };
 
 IntroView.defaultProps = {
   _myRef: null,
   _onMouseMove: null,
   maskStyle: null,
-  textTitle: '',
-  textSubtitle: '',
 };
 
 export default IntroView;

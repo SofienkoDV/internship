@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 
 function HeaderView({
-  burger, onClickBurger, logo 
+  burger, onClickBurger, logo, changeLanguage
 }) {
   const burgerMenu = cn(burger ? styles.navShow : styles.nav);
 
@@ -33,6 +33,8 @@ function HeaderView({
             <Link className={styles.nav__link} to="biography">
               Biography
             </Link>
+            <button className={styles.nav__button} type="button" onClick={() => changeLanguage('en')}>EN</button>
+            <button className={styles.nav__button} type="button" onClick={() => changeLanguage('ua')}>UA</button>
           </nav>
 
           <button
@@ -52,11 +54,13 @@ HeaderView.propTypes = {
   burger: PropTypes.bool.isRequired,
   onClickBurger: PropTypes.func,
   logo: PropTypes.string,
+  changeLanguage: PropTypes.func,
 };
 
 HeaderView.defaultProps = {
   onClickBurger: () => {},
   logo: '',
+  changeLanguage: () => {},
 };
 
 export default HeaderView;

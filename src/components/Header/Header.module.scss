@@ -55,6 +55,26 @@
     &__link:hover {
         opacity: 1;
     }
+
+    &__button {
+        margin-left: 50px;
+        font-weight: 700;
+    
+        color: #222;
+        text-decoration: none;
+        opacity: .5;
+    
+        transition: opacity .1s linear;
+
+        outline: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    &__button:hover {
+        opacity: 1;
+    }
 }
 
 .burger {
@@ -133,6 +153,17 @@
         font-size: 18px;
         font-weight: 700;
         color: #222222;
+        text-decoration: none;
+        opacity: .75;
+    
+        transition: opacity .1s linear;
+    }
+
+    .nav__button {
+        margin-left: 0px;
+        padding: 10px 0;
+        font-size: 18px;
+        font-weight: 700;
         text-decoration: none;
         opacity: .75;
     
