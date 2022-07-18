@@ -8,17 +8,18 @@ function withApp(Component) {
     const [features, setFeatures] = useState([]);
     const [works, setWorks] = useState([]);
     const [team, setTeam] = useState([]);
+    const instance = useMemo(() => axios.create({
+      baseURL: 'https://618115078bfae60017adfe03.mockapi.io',
+    }), []);
 
     useEffect(() => {
       async function fetchData() {
         try {
           const [itemsResponse, featuresResponse, worksResponse, teamResponse] = await Promise.all([
-            axios.get('https://618115078bfae60017adfe03.mockapi.io/items'),
-            axios.get(
-              'https://618115078bfae60017adfe03.mockapi.io/arrFeatures'
-            ),
-            axios.get('https://618115078bfae60017adfe03.mockapi.io/works'),
-            axios.get('https://618115078bfae60017adfe03.mockapi.io/arrTeam'),
+            instance.get('/items'),
+            instance.get('/arrFeatures'),
+            instance.get('/works'),
+            instance.get('/arrTeam'),
           ]);
 
           setFeatures(featuresResponse.data);
