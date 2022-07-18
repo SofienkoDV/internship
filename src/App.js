@@ -26,8 +26,7 @@ function App({ value }) {
 }
 
 App.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  value: PropTypes.object,
+  value: PropTypes.shape({}),
 };
 
 App.defaultProps = {
