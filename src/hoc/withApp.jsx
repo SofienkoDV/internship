@@ -2,8 +2,7 @@ import axios from 'axios';
 import { useState, useEffect, useMemo } from 'react';
 
 function withApp(Component) {
-  // eslint-disable-next-line func-names
-  return function () {
+  return function AppDefault() {
     const [items, setItems] = useState([]);
     const [features, setFeatures] = useState([]);
     const [works, setWorks] = useState([]);
